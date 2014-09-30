@@ -12,6 +12,7 @@ plugins
 *.swo
 *.log
 *.DS_Store
+
 app/scripts/config.js
 
 ## NodeJS-Specific
