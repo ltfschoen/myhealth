@@ -49,3 +49,5 @@ node_modules
 ## Custom
 build/
 dist/
+resources/
+app/fonts/
