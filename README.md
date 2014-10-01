@@ -1,7 +1,7 @@
 myhealth
 ========
 
-Ionic Health App
+Ionic Health App. 
 
 Progress
 ========
@@ -10,6 +10,7 @@ Progress
   1. Yeoman Ionic Installed using Generate Ionic with Maps template and all default plugins
   2. Emulated on iOS Simulator and Android Emulator
   3. Documentation prepared in Readme
+  4. Deployed to Heroku at http://ionichealth.herokuapp.com
 
 Integration Checklist
 =====================
