@@ -370,6 +370,13 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/bower_components/ionic/release/js/ionic.js',
           '<%= yeoman.app %>/bower_components/ionic/release/js/ionic-angular.js',
           '<%= yeoman.app %>/bower_components/angular-mocks/angular-mocks.js',
+          '<%= yeoman.app %>/bower_components/sinon/lib/sinon.js',
+          '<%= yeoman.app %>/bower_components/sinon/lib/sinon/call.js',
+          '<%= yeoman.app %>/bower_components/sinon/lib/sinon/spy.js',
+          '<%= yeoman.app %>/bower_components/sinon/lib/sinon/stub.js',
+          '<%= yeoman.app %>/bower_components/sinon/lib/sinon/match.js',
+          '<%= yeoman.app %>/bower_components/chai/chai.js',
+          '<%= yeoman.app %>/bower_components/sinon-chai/lib/sinon-chai.js',
           '<%= yeoman.app %>/<%= yeoman.scripts %>/**/*.js',
           'test/mock/**/*.js',
           'test/spec/**/*.js'
