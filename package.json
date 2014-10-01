@@ -1,7 +1,9 @@
 {
   "name": "Myhealth",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "express": "4.8.4"
+  },
   "devDependencies": {
     "cordova": "~3.5.0-0.2.6",
     "glob": "~4.0.5",

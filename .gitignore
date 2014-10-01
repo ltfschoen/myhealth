@@ -1,7 +1,5 @@
 ## Yeoman Generator for Ionic 
 
-node_modules
-www
 .tmp
 .sass-cache
 app/bower_components
@@ -38,16 +36,23 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-# Dependency directory
-# Commenting this out is preferred by some people, see
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
-node_modules
-
 # Users Environment Variables
 .lock-wscript
 
 ## Custom
 build/
-dist/
 resources/
-app/fonts/
+
+# PRODUCTION - required for Heroku
+
+# dist/
+# app/fonts/
+# app/bower_components
+
+# exclude node_modules directory excepted node_module folder itself and subfolder 'express' 
+!/node_modules
+/node_modules/*
+!/node_modules/express/
+!/node_modules/express/*
+
+# www
