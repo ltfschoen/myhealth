@@ -6,11 +6,13 @@ Ionic Health App.
 Progress
 ========
     
-- [x] **Setup**
+- [x] **Initial App Setup**
   1. Yeoman Ionic Installed using Generate Ionic with Maps template and all default plugins
   2. Emulated on iOS Simulator and Android Emulator
   3. Documentation prepared in Readme
   4. Deployed to Heroku at http://ionichealth.herokuapp.com
+- [x] **Testing Setup**
+  1. Protractor with standalone Selenium server
 
 Integration Checklist
 =====================
@@ -42,7 +44,8 @@ grunt test
 
 E2E Testing
 ===========
-- [ ] **Protractor to be setup and run with:**
+- [x] **Protractor to be setup and run with the following sequentially in separate Terminal tabs:**
 ```
+grunt serve 
 protractor protractor.conf.js
 ```
