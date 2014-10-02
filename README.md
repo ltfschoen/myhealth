@@ -13,6 +13,8 @@ Progress
   4. Deployed to Heroku at http://ionichealth.herokuapp.com
 - [x] **Testing Setup**
   1. Protractor with standalone Selenium server
+- [x] **Responsive Design Template**
+  1. Basic mobile responsive design with SCSS and Media Queries
 
 Integration Checklist
 =====================
@@ -37,7 +39,7 @@ grunt emulate:ios
 
 Unit Testing
 ============
-- [ ] **Jasmine to be setup and run with:**
+- [x] **Sinon Chai setup, and run with:**
 ```
 grunt test
 ```
