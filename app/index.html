@@ -18,7 +18,7 @@
     <!-- endbuild -->
   </head>
 
-  <body ng-app="Myhealth" ng-controller="MapCtrl">
+  <body ng-app="Myhealth" ng-controller="MapCtrl" ng-cloak>
     <ion-header-bar class="bar-stable">
       <h1 class="title">Map</h1>
     </ion-header-bar>
@@ -30,7 +30,7 @@
         <!-- START LOGO -->
         <section class="page-logo">
           <h1><!-- css logo --></h1>
-          <header>Header Contents<br>
+          <header>
             <span class="header-menu-items" id="left">Slogan</span>
             <span class="header-menu-items" id="left">Header Paragraph</span>
             <span class="header-menu-items" id="right">Map</span>
@@ -41,23 +41,26 @@
 
         <!-- START SIDEBAR -->
         <section class="sidebar">
-          <header>Header
+          <header>Menu
           </header>
           <nav>
             <ul class="sidebar-menu">
-              <li>1</li>
-              <li>2</li>
+              <li>Allergies</li>
+              <li>Vaccinations</li>
+              <li>Medications</li>
+              <li>Medical History</li>
+              <li>Surgical History</li>
             </ul>
           </nav>
-          <footer>Footer
+          <footer>
           </footer>
         </section>
         <!-- END SIDEBAR -->
 
         <!-- START CONTENT -->
         <section class="page-content">
-          <aside>Aside</aside>
-          <p>Paragraph
+          <aside></aside>
+          <p>
             <map on-create="mapCreated(map)"></map>
           </p>
           <div class="box">
@@ -94,7 +97,7 @@
           </div>
           <footer class="page-footer">
             <div class="page-footer-info">
-              Footer Info
+              &copy; Luke Schoen 2014
             </div>
           </footer>
         </section>
