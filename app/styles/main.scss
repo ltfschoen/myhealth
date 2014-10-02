@@ -21,8 +21,8 @@ body {
 .page-logo {
   h1 {
     background: url(../images/myhealth.png) no-repeat;
-    height: 252px;
-    width: 924px;
+    height: 168px;
+    width: 616px;
     text-indent: -9999em;
   }
   header {
@@ -96,6 +96,7 @@ body {
           color: #6C564B;
         }
         div {
+          border: 4px solid #ffffaa;
           display: inline-block;
           vertical-align: top;
           width: 25%;
