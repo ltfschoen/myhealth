@@ -1,8 +1,178 @@
-map {
-  display: block;
-  width: 40%;
-  height: 40%;
+// * {
+//   border: 1px solid black;
+// }
+
+html {
+  font-size: 16px; // h4 is default
 }
+
+body {
+  color: #352a25;
+  font-family: Georgia, serif;
+  font-size: 100%; /* 1em = 10px (62.5% of 16px default) */
+}
+
+/* SITE */
+.site {
+  margin: 40px auto;
+  width: 90%; // 940px;
+}
+
+.page-logo {
+  h1 {
+    background: url(../images/myhealth.png) no-repeat;
+    height: 252px;
+    width: 924px;
+    text-indent: -9999em;
+  }
+  header {
+    border-bottom: 15px solid #26343e;
+    padding: 25px 0;
+    span.header-menu-items {
+      color: #ffff45;
+      background-color: #24552e;
+      border-radius: 1.5em;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      padding: 10px;
+      text-align: center;
+      line-height: 1.2em;
+      #left {
+        float: left;
+      }
+      #right {
+        float: right;
+      }
+    }
+  }
+}
+
+/* SIDE BAR */
+.sidebar { 
+  float: left;
+  clear: both; // avoid interference with other float left items
+  text-align: center;
+  /* target / context = result (context of '.sidebar' is '.site')
+     305px / 940px = 0.32446809em */ 
+  width: 32.446809%; // relative % 
+}
+
+.sidebar header {
+  border-bottom: 5px solid #26343e;
+  padding: 5px 0;
+}
+
+/* CONTENT */
+.page-content {
+  background-color: #cc6;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, .3);
+  /* target / context = result (context of '.content' is '.site')
+    325px / 940px = 0.34574468em */
+  margin-left: 34.574468%;
+  /* target / context = result (context of '.content' is '.site')
+  20px / 590px = 0.3389830em */
+  padding: 3.389830%; // flexible padding
+  /* target / context = result (context of '.content' is '.site')
+    590px / 940px = 0.62765957em */ 
+  width: 62.765957%; // flexible and proportional instead of 590px
+  p map {
+    display: block;
+    width: 150px;
+    height: 150px;
+  }
+  div.box {
+    /* target / context = result (context of '.content' is '.site')
+    400px / 960px = 41.666667em */
+    width: 100%;
+    #container {
+      .compartment {
+        a { 
+          /* target / context = result (context of 'a' default 16px)
+            14px / 16px = 0.875em 
+          */ 
+          font-size: 0.875em;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: #6C564B;
+        }
+        div {
+          display: inline-block;
+          vertical-align: top;
+          width: 25%;
+          min-width: 30%;
+          min-height: 100px;
+        }
+      }
+    }
+  }
+}
+
 .scroll {
   height: 100%;
+}
+
+/* ---------------
+  Media Queries
+---------------- */
+
+/* target iPhone with < 480px */
+
+@media screen and (max-width: 480px) {
+
+  body {
+    color: #352a25;
+    font-family: Georgia, serif;
+    font-size: 62.5%; /* 1em = 10px (62.5% of 16px default) */
+  }
+
+  /* SITE */
+
+  .site {
+    margin: 10px auto;
+  }
+
+  .page-logo {
+    h1 {
+      background: url(../images/myhealth_small.png) no-repeat;
+      height: 84px;
+      width: 308px;
+      margin: 0 auto;
+    }
+    header {
+      border-bottom: none;
+      padding: 0px;
+      span#slogan {
+        float: none;
+        margin: 0 auto;
+      }
+      span#intro {
+        float: none;
+        margin: 0 auto;
+      }
+      span#location {
+        float: none;
+      }
+      span#map {
+        float: none;
+      }
+    }
+  }
+
+  /* CONTENT */
+  .page-content {
+    p map {
+      width: 100%; // full width of viewport
+    }
+  }
+  div.box {
+    width: inherit;
+    #container {
+      .compartment {
+        div {
+          min-height: 100px;
+        }
+      }
+    }
+  }
+
 }

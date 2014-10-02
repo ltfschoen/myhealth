@@ -22,4 +22,12 @@ describe('Controller: MapCtrl', function () {
     scope.mapCreated.should.exist;
   });
 
+  describe("mapCreated", function() {
+    it("should return undefined for the map spy", function() {
+      var mapSpy = sinon.spy(); // spy on argument passed to mapCreated
+      scope.mapCreated(mapSpy); // replicate calling mapCreated with arg
+      mapSpy.should.have.returned(undefined);
+    });
+  });
+
 });
