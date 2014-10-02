@@ -23,8 +23,86 @@
       <h1 class="title">Map</h1>
     </ion-header-bar>
 
-    <ion-content scroll="false">
-      <map on-create="mapCreated(map)"></map>
+    <ion-content scroll="true">
+      <!-- START SITE -->
+      <div class="site">
+
+        <!-- START LOGO -->
+        <section class="page-logo">
+          <h1><!-- css logo --></h1>
+          <header>Header Contents<br>
+            <span class="header-menu-items" id="left">Slogan</span>
+            <span class="header-menu-items" id="left">Header Paragraph</span>
+            <span class="header-menu-items" id="right">Map</span>
+            <span class="header-menu-items" id="right">Location</span>
+          </header>
+
+        </section>
+
+        <!-- START SIDEBAR -->
+        <section class="sidebar">
+          <header>Header
+          </header>
+          <nav>
+            <ul class="sidebar-menu">
+              <li>1</li>
+              <li>2</li>
+            </ul>
+          </nav>
+          <footer>Footer
+          </footer>
+        </section>
+        <!-- END SIDEBAR -->
+
+        <!-- START CONTENT -->
+        <section class="page-content">
+          <aside>Aside</aside>
+          <p>Paragraph
+            <map on-create="mapCreated(map)"></map>
+          </p>
+          <div class="box">
+            
+            <h1>Allergies</h1>
+            <div id="container">
+              <div class="compartment">
+                <div>Food<br>
+                  <a href="#">Link</a>
+                </div>
+                <div>Type
+                </div>
+                <div>Reaction
+                </div>
+              </div>
+              <div class="compartment">
+                <div>Drugs
+                </div>
+                <div>Type
+                </div>
+                <div>Reaction
+                </div>
+              </div>
+              <div class="compartment">
+                <div>Substance
+                </div>
+                <div>Type
+                </div>
+                <div>Reaction
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <footer class="page-footer">
+            <div class="page-footer-info">
+              Footer Info
+            </div>
+          </footer>
+        </section>
+        <!-- END CONTENT -->
+
+      </div>
+      <!-- END SITE -->
+
     </ion-content>
 
     <ion-footer-bar class="bar-stable">
@@ -51,12 +129,11 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-
-        <!-- build:js scripts/scripts.js -->
-        <script src="scripts/config.js"></script>
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers.js"></script>
-        <script src="scripts/directives.js"></script>
-        <!-- endbuild -->
+    <!-- build:js scripts/scripts.js -->
+    <script src="scripts/config.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/directives.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

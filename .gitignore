@@ -2,7 +2,18 @@
 
 .tmp
 .sass-cache
-app/bower_components
+
+# exclude bower_components except for ionic.css in css subfolder used in index.html
+!/app/bower_components
+/app/bower_components/*
+!/app/bower_components/ionic/
+/app/bower_components/ionic/*
+!/app/bower_components/ionic/release/
+/app/bower_components/ionic/release/*
+!/app/bower_components/ionic/release/css/
+!/app/bower_components/ionic/release/css/*
+/app/bower_components/ionic/release/css/ionic.min.css
+
 coverage
 platforms
 plugins
@@ -56,3 +67,6 @@ resources/
 !/node_modules/express/*
 
 # www
+
+# Photoshop files 
+*.psd
