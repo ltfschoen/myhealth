@@ -15,6 +15,9 @@ Progress
   1. Protractor with standalone Selenium server
 - [x] **Responsive Design Template**
   1. Basic mobile responsive design with SCSS and Media Queries
+- [ ] **Google Maps Setup**
+  1. Upgrade Google Maps from v2 to latest v3
+  2. Pull request to Generate Ionic of steps performed
 
 Integration Checklist
 =====================
