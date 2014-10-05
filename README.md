@@ -15,6 +15,9 @@ Progress
   1. Protractor with standalone Selenium server
 - [x] **Responsive Design Template**
   1. Basic mobile responsive design with SCSS and Media Queries
+- [x] **Google Maps Custom API**
+  1. Generated vendor file by copying API key from Google into the link shown in index.html
+  2. Stored API key in JSON file and created service to access it. Not currently used
 - [ ] **Google Maps Setup**
   1. Upgrade Google Maps from v2 to latest v3
   2. Pull request to Generate Ionic of steps performed
