@@ -12,7 +12,6 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -113,10 +112,12 @@
     </ion-footer-bar>
 
     <!-- build:js scripts/vendor.js -->
-    <!-- This Google Maps API file was downloaded from: -->
+    <!-- The default Ionic Google Maps API file was downloaded from: -->
     <!-- https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&sensor=true -->
     <!-- Saving it in the vendor/ directory allows it to be bundled as part of the build system. -->
     <!-- You should replace it with a version downloaded using your API key -->
+    <!-- Note: Default Google Maps API key file has been replaced with custom API key file by copying -->
+    <!-- the above link into the browser, and pasting the API key provided by Google Maps API -->
     <script src="vendor/google/maps.js"></script>
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
@@ -126,6 +127,8 @@
     <script src="bower_components/collide/collide.js"></script>
     <script src="bower_components/ionic/release/js/ionic.js"></script>
     <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -137,6 +140,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers.js"></script>
     <script src="scripts/directives.js"></script>
+    <script src="scripts/services.js"></script>
     <!-- endbuild -->
 </body>
 </html>

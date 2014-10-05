@@ -70,3 +70,6 @@ resources/
 
 # Photoshop files 
 *.psd
+
+# Google Maps API Key
+app/config.json
