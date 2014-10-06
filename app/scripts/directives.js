@@ -26,6 +26,17 @@
           google.maps.event.addDomListener($element[0], 'mousedown', function (e) {
             console.log('Myhealth.directives - mousedown method called');
             e.preventDefault();
+
+            // Create a marker and instantly add it to a map 
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(43.07493, -89.381388),
+              icon: '../images/star_health_high.png',
+              shadow: '../images/star_health_high_shadow.png'
+            });
+
+            // Add marker to map
+            marker.setMap(map);
+
             return false;
           });
         }
