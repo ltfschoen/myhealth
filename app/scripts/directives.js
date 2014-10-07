@@ -1,3 +1,5 @@
+// Encapsulate code in self-executing anonymous function to prevent cluttering global namespace
+// and avoid naming collisions, as code inside parentheses is run immediately but invisible to outside code
 (function(){
 
   'use strict';
@@ -98,6 +100,7 @@
           });
 
         }
+        // Wait for window object map element to load in browser before run initialize method
         google.maps.event.addDomListener(window, 'load', initialize);
       }
     };
