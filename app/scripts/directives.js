@@ -20,12 +20,12 @@
 
           var mapElement = $element[0];
           // Third arg is noWrap boolean that forces Lat -90 to +90 and Lng -180 to +180
-          var latLng = new google.maps.LatLng(43.07493, -89.381388, true);
+          var latLng = new google.maps.LatLng(-36.4300, 148.3230, true);
           
           // Note: Controls added first appear closest to edge of map
           var mapOptions = {
             center: latLng,
-            zoom: 16,
+            zoom: 13,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             keyboardShortcuts: true, // default is true. arrow keys pan. +/- zooms
             disableDoubleClickZoom: false, // default is false.
@@ -67,7 +67,7 @@
 
           // Create a marker and instantly add it to a map 
           var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(43.07493, -89.381388),
+            position: new google.maps.LatLng(-36.4300, 148.3230),
             icon: '../images/star_health_high.png',
             shadow: '../images/star_health_high_shadow.png',
             title: 'Star'
@@ -94,9 +94,9 @@
 
           // Create array of points
           var points = [
-            new google.maps.LatLng(44.07493, -82.381388),
-            new google.maps.LatLng(43.57493, -90.381388),
-            new google.maps.LatLng(42.07493, -89.381388)
+            new google.maps.LatLng(-36.4317, 148.3286),
+            new google.maps.LatLng(-36.4300, 148.3220),
+            new google.maps.LatLng(-36.4100, 148.2913)
           ];
 
           // Create new polygon from polylines
