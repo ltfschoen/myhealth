@@ -98,6 +98,7 @@
           });
 
         }
+        // Wait for window object map element to load in browser before run initialize method
         google.maps.event.addDomListener(window, 'load', initialize);
       }
     };
