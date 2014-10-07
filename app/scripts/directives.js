@@ -1,5 +1,5 @@
 // Encapsulate code in self-executing anonymous function to prevent cluttering global namespace
-// and avoid naming collisions
+// and avoid naming collisions, as code inside parentheses is run immediately but invisible to outside code
 (function(){
 
   'use strict';
