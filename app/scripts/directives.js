@@ -35,6 +35,20 @@
             content: 'Health level impacted by current environment'
           });
 
+          var points = [
+            new google.maps.LatLng(44.07493, -90.381388),
+            new google.maps.LatLng(43.07493, -89.381388),
+            new google.maps.LatLng(42.07493, -88.381388)
+          ];
+
+          var polyline = new google.maps.Polyline({
+            path: points,
+            strokeColor: '#ff44dd',
+            strokeWeight: 10,
+            strokeOpacity: 0.8,
+            map: map
+          });
+
           google.maps.event.addDomListener($element[0], 'mousedown', function (e) {
             console.log('Myhealth.directives - mousedown method called');
             // Stop the side bar from dragging when mousedown/tapdown on the map
