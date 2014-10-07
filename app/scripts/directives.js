@@ -35,17 +35,21 @@
             content: 'Health level impacted by current environment'
           });
 
+          // Create array of points
           var points = [
-            new google.maps.LatLng(44.07493, -90.381388),
-            new google.maps.LatLng(43.07493, -89.381388),
-            new google.maps.LatLng(42.07493, -88.381388)
+            new google.maps.LatLng(44.07493, -82.381388),
+            new google.maps.LatLng(43.57493, -90.381388),
+            new google.maps.LatLng(42.07493, -89.381388)
           ];
 
-          var polyline = new google.maps.Polyline({
+          // Create new polygon from polylines
+          var polyline = new google.maps.Polygon({
             path: points,
             strokeColor: '#ff44dd',
             strokeWeight: 10,
-            strokeOpacity: 0.8,
+            strokeOpacity: 0.5,
+            fillColor: '#ff9999',
+            fillOpacity: 0.3,
             map: map
           });
 
