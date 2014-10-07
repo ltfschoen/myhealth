@@ -22,10 +22,37 @@
           // Third arg is noWrap boolean that forces Lat -90 to +90 and Lng -180 to +180
           var latLng = new google.maps.LatLng(43.07493, -89.381388, true);
           
+          // Note: Controls added first appear closest to edge of map
           var mapOptions = {
             center: latLng,
             zoom: 16,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            keyboardShortcuts: true, // default is true. arrow keys pan. +/- zooms
+            disableDoubleClickZoom: false, // default is false.
+            draggable: true, // default is true. pan the map by dragging
+            scrollwheel: true, // default is true. scroll wheel of mouse zooms
+            streetViewControl: true, // default is true. toggles display of pegman
+            disableDefaultUI: false, // default is false. property for UI (zoom, map control bar)
+            mapTypeControl: true, // default is true. property for UI (map control bar)
+            mapTypeControlOptions: { // DEFAULT (auto), HORIZONTAL_BAR, or DROPDOWN_MENU
+              style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+              position: google.maps.ControlPosition.TOP_LEFT,
+              mapTypeIds: [ // array of map options available
+                google.maps.MapTypeId.ROADMAP, // default
+                google.maps.MapTypeId.SATELLITE, // default
+                google.maps.MapTypeId.TERRAIN // default
+              ]
+            },
+            navigationControl: true, // default is true
+            navigationControlOptions: {
+              position: google.maps.ControlPosition.TOP_LEFT,
+              style: google.maps.NavigationControlStyle.SMALL // default SMALL (DEFAULT, ZOOM_PAN, ANDROID)
+            },
+            scaleControl: true, // default is false
+            scaleControlOptions: {
+              position: google.maps.ControlPosition.TOP,
+              style: google.maps.ScaleControlStyle.SMALL // unsure of alternatives
+            }
           };
 
           var map = new google.maps.Map(mapElement, mapOptions);
