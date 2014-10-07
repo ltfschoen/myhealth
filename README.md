@@ -22,6 +22,11 @@ Progress
   1. Upgrade Google Maps from v2 to latest v3
   2. Pull request to Generate Ionic of steps performed
 
+Bugs
+========
+- [ ] Marker icon does not get placed on iOS Simulator. Only works in desktop browser.
+- [ ] Close infoWindow event does not work in production on Heroku. Only works in development.
+
 Integration Checklist
 =====================
 All features, bugs, and chores must conform with the following prior to pull request being accepted:

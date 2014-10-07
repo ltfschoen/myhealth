@@ -78,6 +78,20 @@
             content: 'Health level impacted by current environment'
           });
 
+          // Listen for close window click event
+          // Reference: https://github.com/amenadiel/google-maps-documentation/blob/master/docs/google.maps.StreetViewPanorama.md
+          var closeInfoWindow = google.maps.event.addDomListener(infoWindow, 'closeclick', function (e) {
+            console.log('Myhealth.directives - close infoWindow clicked');
+            // Close InfoWindow
+            infoWindow.close(map, infoWindow);
+            // Assign the returned MouseEvent object property of e
+            var positionClicked = marker.getPosition();
+            console.log('InfoWindow Closed is at PositionClicked: ' + positionClicked);
+
+            return false;
+          });
+
+
           // Create array of points
           var points = [
             new google.maps.LatLng(44.07493, -82.381388),
