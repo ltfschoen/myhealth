@@ -22,20 +22,36 @@
     
           $scope.onCreate({map: map});
 
-          // Stop the side bar from dragging when mousedown/tapdown on the map
+          // Create a marker and instantly add it to a map 
+          var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(43.07493, -89.381388),
+            icon: '../images/star_health_high.png',
+            shadow: '../images/star_health_high_shadow.png',
+            title: 'Star'
+          });
+
+          // Create new InfoWindow object
+          var infoWindow = new google.maps.InfoWindow({
+            content: 'Health level impacted by current environment'
+          });
+
           google.maps.event.addDomListener($element[0], 'mousedown', function (e) {
             console.log('Myhealth.directives - mousedown method called');
+            // Stop the side bar from dragging when mousedown/tapdown on the map
             e.preventDefault();
-
-            // Create a marker and instantly add it to a map 
-            var marker = new google.maps.Marker({
-              position: new google.maps.LatLng(43.07493, -89.381388),
-              icon: '../images/star_health_high.png',
-              shadow: '../images/star_health_high_shadow.png'
-            });
 
             // Add marker to map
             marker.setMap(map);
+
+            return false;
+          });
+
+          // Listen for marker click event
+          google.maps.event.addDomListener(marker, 'click', function () {
+            console.log('Myhealth.directives - click marker method called');
+
+            // Add InfoWindow to map
+            infoWindow.open(map, marker);
 
             return false;
           });
