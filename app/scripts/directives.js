@@ -11,13 +11,17 @@
         onCreate: '&'
       },
       link: function ($scope, $element, $attr) {
+
         function initialize() {
+
           console.log('Myhealth.directives - initialize method called');
+
           var mapOptions = {
             center: new google.maps.LatLng(43.07493, -89.381388),
             zoom: 16,
             mapTypeId: google.maps.MapTypeId.ROADMAP
           };
+
           var map = new google.maps.Map($element[0], mapOptions);
     
           $scope.onCreate({map: map});
@@ -43,7 +47,7 @@
           ];
 
           // Create new polygon from polylines
-          var polyline = new google.maps.Polygon({
+          var polygon = new google.maps.Polygon({
             path: points,
             strokeColor: '#ff44dd',
             strokeWeight: 10,
@@ -65,14 +69,30 @@
           });
 
           // Listen for marker click event
-          google.maps.event.addDomListener(marker, 'click', function () {
+          var handleMarker = google.maps.event.addDomListener(marker, 'click', function (e) {
             console.log('Myhealth.directives - click marker method called');
 
             // Add InfoWindow to map
             infoWindow.open(map, marker);
 
+            // Assign the returned MouseEvent object property of e
+            var positionClicked = marker.getPosition();
+            console.log('Marker PositionClicked is: ' + positionClicked);
+
             return false;
           });
+
+          // Listen for polyline click event
+          var handlePolyline = google.maps.event.addDomListener(polygon, 'click', function (e) {
+            console.log('Myhealth.directives - click polygon method called');
+
+            // Assign the returned MouseEvent object property of e
+            var positionClicked = e.latLng;
+            console.log('Polygon PositionClicked is: ' + positionClicked);
+
+            return false;
+          });
+
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
