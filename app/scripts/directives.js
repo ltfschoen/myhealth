@@ -1,3 +1,5 @@
+// Encapsulate code in self-executing anonymous function to prevent cluttering global namespace
+// and avoid naming collisions
 (function(){
 
   'use strict';
