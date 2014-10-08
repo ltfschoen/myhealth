@@ -73,24 +73,38 @@
             title: 'Star'
           });
 
-          // Create new InfoWindow object
-          var infoWindow = new google.maps.InfoWindow({
-            content: 'Health level impacted by current environment'
+          // Create new InfoWindow objects
+          var infoWindowLadyBird = new google.maps.InfoWindow({
+            content: 'Warning: Alpine ladybird beetle territory'
+          });
+
+          var infoWindowCrossCountry = new google.maps.InfoWindow({
+            content: 'Cross country skiing area'
           });
 
           // Listen for close window click event
           // Reference: https://github.com/amenadiel/google-maps-documentation/blob/master/docs/google.maps.StreetViewPanorama.md
-          var closeInfoWindow = google.maps.event.addDomListener(infoWindow, 'closeclick', function (e) {
-            console.log('Myhealth.directives - close infoWindow clicked');
+          var closeInfoWindowLadyBird = google.maps.event.addDomListener(infoWindowLadyBird, 'closeclick', function (e) {
+            console.log('Myhealth.directives - close infoWindowLadyBird clicked');
             // Close InfoWindow
-            infoWindow.close(map, infoWindow);
+            infoWindowLadyBird.close(map, infoWindowLadyBird);
             // Assign the returned MouseEvent object property of e
             var positionClicked = marker.getPosition();
-            console.log('InfoWindow Closed is at PositionClicked: ' + positionClicked);
+            console.log('InfoWindowLadyBird Closed is at PositionClicked: ' + positionClicked);
 
             return false;
           });
 
+          var closeInfoWindowCrossCountry = google.maps.event.addDomListener(infoWindowCrossCountry, 'closeclick', function (e) {
+            console.log('Myhealth.directives - close infoWindowCrossCountry clicked');
+            // Close InfoWindow
+            infoWindowCrossCountry.close(map, infoWindowCrossCountry);
+            // Assign the returned MouseEvent object property of e
+            var positionClicked = polygon.getPosition();
+            console.log('InfoWindowCrossCountry Closed is at PositionClicked: ' + positionClicked);
+
+            return false;
+          });
 
           // Create array of points
           var points = [
@@ -123,10 +137,36 @@
           var handleMarker = google.maps.event.addDomListener(marker, 'click', function (e) {
             console.log('Myhealth.directives - click marker method called');
             // Add InfoWindow to map
-            infoWindow.open(map, marker);
+            infoWindowLadyBird.open(map, marker);
             // Assign the returned MouseEvent object property of e
             var positionClicked = marker.getPosition();
             console.log('Marker PositionClicked is: ' + positionClicked);
+
+            // Reference: http://blog.mridey.com/2010/05/how-to-create-and-display-custom.html
+            var panorama = new google.maps.StreetViewPanorama(
+              document.getElementById('streetview')
+            );
+
+            panorama.registerPanoProvider(function(pano) {
+              return {
+                location: {
+                  pano: pano,
+                  description: "Mount Carruthers"
+                },
+                links: [], // Array of StreetViewLink
+                copyright: 'Imagery \xA9 2014 Luke Schoen',
+                tiles: {
+                  tileSize: new google.maps.Size(512, 512),
+                  worldSize: new google.maps.Size(1500, 750),
+                  originHeading: 0, // Align panorama with the headings in links
+                  getTileUrl: function(room, zoom, x, y) {
+                    return '../images/happy_campers' + '_' + room + '_' + zoom + '_' + x + '_' + y + '.jpg';
+                  }
+                }
+              };
+            });
+
+            panorama.setPano('panorama');
 
             return false;
           });
@@ -134,6 +174,10 @@
           // Listen for polyline click event
           var handlePolyline = google.maps.event.addDomListener(polygon, 'click', function (e) {
             console.log('Myhealth.directives - click polygon method called');
+
+            // Add InfoWindow for polygon to map
+            infoWindowCrossCountry.open(map, polygon);
+
             // Assign the returned MouseEvent object property of e
             var positionClicked = e.latLng;
             console.log('Polygon PositionClicked is: ' + positionClicked);
