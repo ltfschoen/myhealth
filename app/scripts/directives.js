@@ -153,12 +153,12 @@
                   pano: pano,
                   description: "Mount Carruthers"
                 },
-                links: [], // an array of StreetViewLink.
+                links: [], // Array of StreetViewLink
                 copyright: 'Imagery \xA9 2014 Luke Schoen',
                 tiles: {
                   tileSize: new google.maps.Size(512, 512),
                   worldSize: new google.maps.Size(1500, 750),
-                  originHeading: 0, // To align the panorama with the headings in the links.
+                  originHeading: 0, // Align panorama with the headings in links
                   getTileUrl: function(room, zoom, x, y) {
                     return '../images/happy_campers' + '_' + room + '_' + zoom + '_' + x + '_' + y + '.jpg';
                   }
