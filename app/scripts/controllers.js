@@ -10,8 +10,8 @@
     console.log($scope.googleMapsAPI);
 
     // Toggle the Panorama view visibility
-    $scope.visiblePano = false;
-    $scope.panoValue = 'Show';
+    $scope.visiblePano = true;
+    $scope.panoValue = 'Hide';
 
     $scope.togglePano = function(data) {
       console.log('togglePano method called');

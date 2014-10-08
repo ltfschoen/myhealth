@@ -22,6 +22,7 @@ Progress
   1. Upgrade Google Maps from v2 to latest v3
 - [x] **Google Maps Implementations**
   1. Marker icons, Polylines, Polygons, Transparent backgrounds, Custom streetview panoramas
+  2. Embedded InfoWindow styles
 - [ ] **Google Maps Pending**
   1. Draggable objects, Custom cursors, noClear map container
 - [ ] **Google Maps Community Contribution**
