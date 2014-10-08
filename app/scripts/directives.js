@@ -119,7 +119,7 @@
           // Create array of points
           var points = [
             new google.maps.LatLng(-36.4317, 148.3286),
-            new google.maps.LatLng(-36.4300, 148.3220),
+            new google.maps.LatLng(-36.4300, 148.3120),
             new google.maps.LatLng(-36.4100, 148.2913)
           ];
 
@@ -204,12 +204,46 @@
           var handlePolyline = google.maps.event.addDomListener(polygon, 'mouseover', function (e) {
             console.log('Myhealth.directives - click polygon method called');
 
+            // Detailed map element
+            var infoWindowCrossCountryContent = document.createElement('div');
+            infoWindowCrossCountryContent.style.width = '200px';
+            infoWindowCrossCountryContent.style.height = '200px';
+
+            document.getElementsByTagName('map')[0].appendChild(infoWindowCrossCountryContent);
+
+            // Grab the MouseEvent object property 'e' passed in that contains mouseover coords
+            var positionMouseOver = e.latLng;
+            console.log('Polygon PositionMouseOver is: ' + positionMouseOver);
+
+            // MapOptions for overview map
+            var overviewOpts = {
+              zoom: 14,
+              center: positionMouseOver,
+              mapTypeId: map.getMapTypeId(),
+              disableDefaultUI: true
+            };
+
+            // Create detailedMap to display zoomed in version of polygon where mouseover occurred
+            var detailMap = new google.maps.Map(infoWindowCrossCountryContent, overviewOpts);
+
+            // Marker for detailMap (grabbed from parameter 'e' matching mouseover position)
+            var detailMarker = new google.maps.Marker({
+              position: positionMouseOver,
+              map: detailMap,
+              clickable: true
+            });
+            
+            // Check if infoWindowCrossCountry exists to prevent too many loading on mouseover
+            if (!infoWindowCrossCountry) {
+              infoWindowCrossCountry = new google.maps.InfoWindow();
+            }
+            
+            // Set the detailMap content inside the infoWindowCrossCountry
+            infoWindowCrossCountry.setContent(infoWindowCrossCountryContent);
+
             // Add InfoWindow for polygon to map
             infoWindowCrossCountry.open(map, polygon);
 
-            // Assign the returned MouseEvent object property of e
-            var positionClicked = e.latLng;
-            console.log('Polygon PositionClicked is: ' + positionClicked);
             return false;
           });
 
