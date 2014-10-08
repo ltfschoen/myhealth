@@ -87,7 +87,6 @@
             '<p><a href="http://www.ento.csiro.au/biology/ladybirds/imageGallery.php?pageNo=3" target="_new">Harmonia Conformis</a></p>' +
             '</div>';
 
-
           var infoWindowCrossCountry = new google.maps.InfoWindow({
             content: 'Cross country skiing area'
           });
