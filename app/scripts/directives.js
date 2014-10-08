@@ -26,6 +26,7 @@
           var mapOptions = {
             center: latLng,
             zoom: 13,
+            backgroundColor: '#ff5511',
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             keyboardShortcuts: true, // default is true. arrow keys pan. +/- zooms
             disableDoubleClickZoom: false, // default is false.
@@ -134,39 +135,48 @@
           });
 
           // Listen for marker click event
-          var handleMarker = google.maps.event.addDomListener(marker, 'click', function (e) {
+          var handleMarker = google.maps.event.addDomListener(marker, 'click', function () {
+
             console.log('Myhealth.directives - click marker method called');
-            // Add InfoWindow to map
-            infoWindowLadyBird.open(map, marker);
-            // Assign the returned MouseEvent object property of e
-            var positionClicked = marker.getPosition();
-            console.log('Marker PositionClicked is: ' + positionClicked);
+            // Invoke sending message to parent controller (MapCtrl)
+            $scope.$emit('togglePanoEvent', true);
 
-            // Reference: http://blog.mridey.com/2010/05/how-to-create-and-display-custom.html
-            var panorama = new google.maps.StreetViewPanorama(
-              document.getElementById('streetview')
-            );
+            $scope.$on('loadedPano', function(event, message) {
+              console.log('loadedPanoEvent msg sent to child directive is: ' + message);
 
-            panorama.registerPanoProvider(function(pano) {
-              return {
-                location: {
-                  pano: pano,
-                  description: "Mount Carruthers"
-                },
-                links: [], // Array of StreetViewLink
-                copyright: 'Imagery \xA9 2014 Luke Schoen',
-                tiles: {
-                  tileSize: new google.maps.Size(512, 512),
-                  worldSize: new google.maps.Size(1500, 750),
-                  originHeading: 0, // Align panorama with the headings in links
-                  getTileUrl: function(room, zoom, x, y) {
-                    return '../images/happy_campers' + '_' + room + '_' + zoom + '_' + x + '_' + y + '.jpg';
+              // Add InfoWindow to map
+              infoWindowLadyBird.open(map, marker);
+              // Assign the returned MouseEvent object property of e
+              var positionClicked = marker.getPosition();
+              console.log('Marker PositionClicked is: ' + positionClicked);
+
+              // Reference: http://blog.mridey.com/2010/05/how-to-create-and-display-custom.html
+              var panorama = new google.maps.StreetViewPanorama(
+                document.getElementById('streetview')
+              );
+
+              panorama.registerPanoProvider(function(pano) {
+                return {
+                  location: {
+                    pano: pano,
+                    description: "Mount Carruthers"
+                  },
+                  links: [], // Array of StreetViewLink
+                  copyright: 'Imagery \xA9 2014 Luke Schoen',
+                  tiles: {
+                    tileSize: new google.maps.Size(512, 512),
+                    worldSize: new google.maps.Size(1500, 750),
+                    originHeading: 0, // Align panorama with the headings in links
+                    getTileUrl: function(room, zoom, x, y) {
+                      return '../images/happy_campers' + '_' + room + '_' + zoom + '_' + x + '_' + y + '.jpg';
+                    }
                   }
-                }
-              };
-            });
+                };
+              });
 
-            panorama.setPano('panorama');
+              panorama.setPano('panorama');
+
+            });
 
             return false;
           });

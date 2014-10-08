@@ -18,14 +18,20 @@ Progress
 - [x] **Google Maps Custom API**
   1. Generated vendor file by copying API key from Google into the link shown in index.html
   2. Stored API key in JSON file and created service to access it. Not currently used
-- [ ] **Google Maps Setup**
+- [x] **Google Maps Setup**
   1. Upgrade Google Maps from v2 to latest v3
-  2. Pull request to Generate Ionic of steps performed
+- [x] **Google Maps Implementations**
+  1. Marker icons, Polylines, Polygons, Transparent backgrounds, Custom streetview panoramas
+- [ ] **Google Maps Pending**
+  1. Draggable objects, Custom cursors, noClear map container
+- [ ] **Google Maps Community Contribution**
+  1. Pull request to Generate Ionic of steps performed
 
-Bugs
+Bugs & Issues
 ========
 - [ ] Marker icon does not get placed on iOS Simulator. Only works in desktop browser.
 - [ ] Close infoWindow event does not work in production on Heroku. Only works in development.
+- [ ] Panorama Streetview display toggle requires user to click Marker twice (instead of only once) to show the Panorama (to trigger the $broadcast response to the child Directive from the parent Controller after the initial $emit communication) and when the Panorama is hidden manually it does not trigger again at all when the Marker is clicked again.
 
 Integration Checklist
 =====================

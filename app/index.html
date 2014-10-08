@@ -63,10 +63,10 @@
         <!-- START CONTENT -->
         <section class="page-content">
           <aside>
-            <!-- <input type="button" name="removeIcons" value="Remove Icons" ng-click="removeIcons()"> -->
+            <input type="button" value="{{ panoValue }} Panorama" ng-click="togglePano()">
           </aside>
           <p>
-            <div id="streetview"></div>
+            <div id="streetview" ng-show="visiblePano"></div>
           </p>
           <div class="box">
             
