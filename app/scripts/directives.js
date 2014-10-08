@@ -176,6 +176,11 @@
 
               panorama.setPano('panorama');
 
+              // Change properties of MapOptions after map has been initialised
+              map.setOptions({
+                zoom: 10
+              });
+
             });
 
             return false;
