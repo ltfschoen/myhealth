@@ -68,6 +68,19 @@ p map {
   height: 350px;
 }
 
+#ladybird-info {
+  width: 220px;
+  h3 {
+    float: right;
+    vertical-align: top;
+    margin-top: 0;
+  }
+  img {
+    float: left;
+    margin-right: 10px;
+  }
+}
+
 /* CONTENT */
 .page-content {
   background-color: #cc6;
