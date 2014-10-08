@@ -64,8 +64,8 @@ body {
 
 p map {
   display: block;
-  width: 350px;
-  height: 350px;
+  width: 450px;
+  height: 450px;
 }
 
 #ladybird-info {
@@ -78,6 +78,10 @@ p map {
   img {
     float: left;
     margin-right: 10px;
+  }
+  video {
+    width: 300px;
+    height: 200px;
   }
 }
 

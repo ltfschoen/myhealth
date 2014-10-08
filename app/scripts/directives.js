@@ -85,6 +85,7 @@
             '<img src="../images/ladybird.jpg" alt="">' +
             '<h3>Ladybird</h3>' +
             '<p><a href="http://www.ento.csiro.au/biology/ladybirds/imageGallery.php?pageNo=3" target="_new">Harmonia Conformis</a></p>' +
+            '<video src="../images/ladybird.mp4" controls="controls" autoplay="autoplay">' +
             '</div>';
 
           var infoWindowCrossCountry = new google.maps.InfoWindow({
@@ -132,15 +133,18 @@
             fillOpacity: 0.3,
             map: map
           });
-          // Note: Event listeners assigned to a variable to prevent global variables
-          var placeMarker = google.maps.event.addDomListener($element[0], 'mousedown', function (e) {
-            console.log('Myhealth.directives - mousedown method called');
-            // Stop the side bar from dragging when mousedown/tapdown on the map
-            e.preventDefault();
-            // Add marker to map
-            marker.setMap(map);
-            return false;
-          });
+
+          // // Note: Event listeners assigned to a variable to prevent global variables
+          // var placeMarker = google.maps.event.addDomListener($element[0], 'mousedown', function (e) {
+          //   console.log('Myhealth.directives - mousedown method called');
+          //   // Stop the side bar from dragging when mousedown/tapdown on the map
+          //   e.preventDefault();
+          //   // Add marker to map
+          //   marker.setMap(map);
+          //   return false;
+          // });
+
+          marker.setMap(map);
 
           // Listen for marker click event
           var handleMarker = google.maps.event.addDomListener(marker, 'click', function () {
