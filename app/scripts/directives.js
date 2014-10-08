@@ -26,6 +26,7 @@
           var mapOptions = {
             center: latLng,
             zoom: 13,
+            noClear: true, // default is false. clears map container content before placing map
             backgroundColor: '#ff5511',
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             keyboardShortcuts: true, // default is true. arrow keys pan. +/- zooms
@@ -78,6 +79,14 @@
           var infoWindowLadyBird = new google.maps.InfoWindow({
             content: 'Warning: Alpine ladybird beetle territory'
           });
+
+          // Content for InfoWindow
+          var infoWindowLadyBirdContent = '<div id="ladybird-info">' +
+            '<img src="../images/ladybird.jpg" alt="">' +
+            '<h3>Ladybird</h3>' +
+            '<p><a href="http://www.ento.csiro.au/biology/ladybirds/imageGallery.php?pageNo=3" target="_new">Harmonia Conformis</a></p>' +
+            '</div>';
+
 
           var infoWindowCrossCountry = new google.maps.InfoWindow({
             content: 'Cross country skiing area'
@@ -144,6 +153,8 @@
             $scope.$on('loadedPano', function(event, message) {
               console.log('loadedPanoEvent msg sent to child directive is: ' + message);
 
+              // Set the content of the InfoWindow
+              infoWindowLadyBird.setContent(infoWindowLadyBirdContent);
               // Add InfoWindow to map
               infoWindowLadyBird.open(map, marker);
               // Assign the returned MouseEvent object property of e
