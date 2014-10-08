@@ -25,6 +25,7 @@ Progress
   2. Embedded InfoWindow styles
 - [ ] **Google Maps Pending**
   1. Draggable objects, Custom cursors, noClear map container
+  2. Pages 126-127 multiple Dynamic Markers
 - [ ] **Google Maps Community Contribution**
   1. Pull request to Generate Ionic of steps performed
 
