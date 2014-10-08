@@ -26,6 +26,7 @@
           var mapOptions = {
             center: latLng,
             zoom: 13,
+            backgroundColor: '#ff5511',
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             keyboardShortcuts: true, // default is true. arrow keys pan. +/- zooms
             disableDoubleClickZoom: false, // default is false.
