@@ -96,13 +96,13 @@
             return false;
           });
 
-          var closeInfoWindowCrossCountry = google.maps.event.addDomListener(infoWindowCrossCountry, 'closeclick', function (e) {
-            console.log('Myhealth.directives - close infoWindowCrossCountry clicked');
+          var closeInfoWindowCrossCountry = google.maps.event.addDomListener(infoWindowCrossCountry, 'mouseout', function (e) {
+            console.log('Myhealth.directives - close infoWindowCrossCountry mouseout');
             // Close InfoWindow
             infoWindowCrossCountry.close(map, infoWindowCrossCountry);
             // Assign the returned MouseEvent object property of e
             var positionClicked = polygon.getPosition();
-            console.log('InfoWindowCrossCountry Closed is at PositionClicked: ' + positionClicked);
+            console.log('InfoWindowCrossCountry Closed is at PositionMouseOut: ' + positionClicked);
 
             return false;
           });
@@ -187,7 +187,7 @@
           });
 
           // Listen for polyline click event
-          var handlePolyline = google.maps.event.addDomListener(polygon, 'click', function (e) {
+          var handlePolyline = google.maps.event.addDomListener(polygon, 'mouseover', function (e) {
             console.log('Myhealth.directives - click polygon method called');
 
             // Add InfoWindow for polygon to map
