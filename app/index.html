@@ -53,6 +53,9 @@
             </ul>
           </nav>
           <footer>
+            <p>
+              <map on-create="mapCreated(map)"></map>
+            </p>
           </footer>
         </section>
         <!-- END SIDEBAR -->
@@ -60,10 +63,10 @@
         <!-- START CONTENT -->
         <section class="page-content">
           <aside>
-            <input type="button" name="mapIcon" value="Set Map Icon" ng-click="setIcon()">
+            <!-- <input type="button" name="removeIcons" value="Remove Icons" ng-click="removeIcons()"> -->
           </aside>
           <p>
-            <map on-create="mapCreated(map)"></map>
+            <div id="streetview"></div>
           </p>
           <div class="box">
             
