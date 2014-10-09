@@ -27,7 +27,7 @@
             center: latLng,
             zoom: 13,
             noClear: true, // default is false. clears map container content before placing map
-            backgroundColor: '#ff5511',
+            backgroundColor: '#eeeeee',
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             keyboardShortcuts: true, // default is true. arrow keys pan. +/- zooms
             disableDoubleClickZoom: false, // default is false.
@@ -67,12 +67,20 @@
             console.log('Myhealth.directives - map bounds initialized');
           });
 
-          // Create a marker and instantly add it to a map 
+          // Create a marker 
           var marker = new google.maps.Marker({
             position: new google.maps.LatLng(-36.4300, 148.3230),
             icon: '../images/star_health_high.png',
             shadow: '../images/star_health_high_shadow.png',
             title: 'Star'
+          });
+
+          // Create a marker and instantly add it to a map 
+          var markerLadybird = new google.maps.Marker({
+            position: new google.maps.LatLng(-36.4280, 148.3130),
+            icon: '../images/ladybird_icon_high.png',
+            shadow: '../images/ladybird_icon_high_shadow.png',
+            title: 'Ladybird'
           });
 
           // Create new InfoWindow objects
@@ -144,7 +152,29 @@
           //   return false;
           // });
 
+          // Place the markers on the map
           marker.setMap(map);
+
+          markerLadybird.setMap(map);
+
+          // Listen for marker click event
+          var handleMarkerLadybird = google.maps.event.addDomListener(markerLadybird, 'click', function () {
+
+              // Set the content of the InfoWindow
+              infoWindowLadyBird.setContent(infoWindowLadyBirdContent);
+              // Add InfoWindow to map
+              infoWindowLadyBird.open(map, markerLadybird);
+              // Assign the returned MouseEvent object property of e
+              var positionClicked = markerLadybird.getPosition();
+              console.log('markerLadybird PositionClicked is: ' + positionClicked);
+
+              // Change properties of MapOptions after map has been initialised
+              map.setOptions({
+                zoom: 10
+              });
+
+            return false;
+          });
 
           // Listen for marker click event
           var handleMarker = google.maps.event.addDomListener(marker, 'click', function () {
@@ -156,11 +186,6 @@
             $scope.$on('loadedPano', function(event, message) {
               console.log('loadedPanoEvent msg sent to child directive is: ' + message);
 
-              // Set the content of the InfoWindow
-              infoWindowLadyBird.setContent(infoWindowLadyBirdContent);
-              // Add InfoWindow to map
-              infoWindowLadyBird.open(map, marker);
-              // Assign the returned MouseEvent object property of e
               var positionClicked = marker.getPosition();
               console.log('Marker PositionClicked is: ' + positionClicked);
 
@@ -190,18 +215,13 @@
 
               panorama.setPano('panorama');
 
-              // Change properties of MapOptions after map has been initialised
-              map.setOptions({
-                zoom: 10
-              });
-
             });
 
             return false;
           });
 
           // Listen for polyline click event
-          var handlePolyline = google.maps.event.addDomListener(polygon, 'mouseover', function (e) {
+          var handlePolyline = google.maps.event.addDomListener(polygon, 'click', function (e) {
             console.log('Myhealth.directives - click polygon method called');
 
             // Detailed map element
@@ -212,13 +232,13 @@
             document.getElementsByTagName('map')[0].appendChild(infoWindowCrossCountryContent);
 
             // Grab the MouseEvent object property 'e' passed in that contains mouseover coords
-            var positionMouseOver = e.latLng;
-            console.log('Polygon PositionMouseOver is: ' + positionMouseOver);
+            var positionClicked = e.latLng;
+            console.log('Polygon PositionMouseOver is: ' + positionClicked);
 
             // MapOptions for overview map
             var overviewOpts = {
               zoom: 14,
-              center: positionMouseOver,
+              center: positionClicked,
               mapTypeId: map.getMapTypeId(),
               disableDefaultUI: true
             };
@@ -226,14 +246,14 @@
             // Create detailedMap to display zoomed in version of polygon where mouseover occurred
             var detailMap = new google.maps.Map(infoWindowCrossCountryContent, overviewOpts);
 
-            // Marker for detailMap (grabbed from parameter 'e' matching mouseover position)
+            // Marker for detailMap (grabbed from parameter 'e' matching clicked position)
             var detailMarker = new google.maps.Marker({
-              position: positionMouseOver,
+              position: positionClicked,
               map: detailMap,
               clickable: true
             });
             
-            // Check if infoWindowCrossCountry exists to prevent too many loading on mouseover
+            // Check if infoWindowCrossCountry exists to prevent too many loading on click
             if (!infoWindowCrossCountry) {
               infoWindowCrossCountry = new google.maps.InfoWindow();
             }

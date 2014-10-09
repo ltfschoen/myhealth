@@ -22,9 +22,9 @@ Progress
   1. Upgrade Google Maps from v2 to latest v3
 - [x] **Google Maps Implementations**
   1. Marker icons, Polylines, Polygons, Transparent backgrounds, Custom streetview panoramas
-  2. Embedded InfoWindow styles, Detailed Map InfoWindow, noClear map container
+  2. Embedded InfoWindow styles, Detailed Map InfoWindow, noClear map container, Customer cursors
 - [ ] **Google Maps Pending**
-  1. Draggable objects, Custom cursors
+  1. Draggable objects
   2. Pages 126-127 multiple Dynamic Markers
 - [ ] **Google Maps Community Contribution**
   1. Pull request to Generate Ionic of steps performed
