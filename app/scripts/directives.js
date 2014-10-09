@@ -93,7 +93,7 @@
             '<img src="../images/ladybird.jpg" alt="">' +
             '<h3>Ladybird</h3>' +
             '<p><a href="http://www.ento.csiro.au/biology/ladybirds/imageGallery.php?pageNo=3" target="_new">Harmonia Conformis</a></p>' +
-            '<video src="../ladybird.mp4" controls="controls" autoplay="autoplay">' +
+            '<video type="video/mp4" src="../videos/ladybird.mp4" controls="controls" autoplay="autoplay">' +
             '</div>';
 
           var infoWindowCrossCountry = new google.maps.InfoWindow({
