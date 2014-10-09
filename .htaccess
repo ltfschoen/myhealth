@@ -2,3 +2,4 @@ AddType video/mp4 .mp4
 AddType video/mpeg .mp4
 AddType video/ogg .ogv
 AddType video/webm .webm
+AddType video/quicktime .mov
