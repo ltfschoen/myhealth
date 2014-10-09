@@ -34,6 +34,7 @@ Bugs & Issues
 - [ ] Marker icon does not get placed on iOS Simulator. Only works in desktop browser.
 - [ ] Close infoWindow event does not work in production on Heroku. Only works in development.
 - [ ] Panorama Streetview display toggle requires user to click Marker twice (instead of only once) to show the Panorama (to trigger the $broadcast response to the child Directive from the parent Controller after the initial $emit communication) and when the Panorama is hidden manually it does not trigger again at all when the Marker is clicked again.
+- [ ] No video playback when deployed to Heroku using .mp4 format. The .mp4 format only works locally (.mov does not work at all). Attempted to overcome by adding types to .htaccess file unsuccessfully. Untested approach is to try one of the free Heroku Addons https://addons.heroku.com/?q=video
 
 Integration Checklist
 =====================
