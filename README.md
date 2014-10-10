@@ -24,8 +24,12 @@ Progress
   1. Marker icons, Polylines, Polygons, Transparent backgrounds, Custom streetview panoramas
   2. Embedded InfoWindow styles, Detailed Map InfoWindow, noClear map container, Customer cursors
 - [ ] **Google Maps Pending**
-  1. Draggable objects
+  1. Draggable objects, Removing Polylines from map
   2. Pages 126-127 multiple Dynamic Markers
+  3. Cluster icons and arrays of clickable cluster markers (grid-based, distance-based, or regional) within different boundaries using marker manager for different zoom levels, and search and filtering functionality.
+  4. Reverse Geocoding address lookup service from position
+  5. Geocoding IP-based and using Google AJAX API
+  6. Geo.js to grab user location (context-driven mobile web with unified API for geolocation for high accuracy location-awareness) 
 - [ ] **Google Maps Community Contribution**
   1. Pull request to Generate Ionic of steps performed
 
@@ -34,7 +38,7 @@ Bugs & Issues
 - [ ] Marker icon does not get placed on iOS Simulator. Only works in desktop browser.
 - [ ] Close infoWindow event does not work in production on Heroku. Only works in development.
 - [ ] Panorama Streetview display toggle requires user to click Marker twice (instead of only once) to show the Panorama (to trigger the $broadcast response to the child Directive from the parent Controller after the initial $emit communication) and when the Panorama is hidden manually it does not trigger again at all when the Marker is clicked again.
-- [ ] No video playback when deployed to Heroku using .mp4 format. The .mp4 format only works locally (.mov does not work at all). Attempted to overcome by adding types to .htaccess file unsuccessfully. Untested approach is to try one of the free Heroku Addons https://addons.heroku.com/?q=video
+- [ ] No video playback when deployed to Heroku using .mp4 format. The .mp4 format only works locally (.mov does not work at all). Attempted to overcome by adding types to .htaccess file unsuccessfully. Untested approach is to try one of the free Heroku Addons https://addons.heroku.com/?q=video or by using video.setAttribute...
 
 Integration Checklist
 =====================
