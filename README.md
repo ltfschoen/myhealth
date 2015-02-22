@@ -1,7 +1,9 @@
 myhealth
 ========
 
-Ionic Health App. 
+Ionic Health App.
+
+Refer to [my Yeoman Ionic blog post](http://lukeschoen.blogspot.com.au/2014/09/ionic.html) and [my YouTube Video showing how to use Cordova to deploy to iOS Simulator with Xcode and Android Emulation with Eclipse](https://www.youtube.com/watch?v=Y7OLq_NHfnc).
 
 Progress
 ========
